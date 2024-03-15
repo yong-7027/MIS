@@ -17,7 +17,7 @@ public class TestServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
-            // 注册 Derby 驱动
+            //注册 Derby 驱动
             Class.forName("org.apache.derby.jdbc.ClientDriver");
 
             // 连接数据库
@@ -27,7 +27,7 @@ public class TestServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(url, user, password);
 
             // 连接成功，返回成功信息
-            response.getWriter().write("Database connection successful!");
+            response.getWriter().write("Database connection successful");
             
             // 关闭连接
             conn.close();
