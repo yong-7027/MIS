@@ -23,6 +23,12 @@
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+    <groupId>org.apache.derby</groupId>
+    <artifactId>derbyclient</artifactId>
+    <version>10.16.1.1</version> <!-- 根据你的需要修改版本号 -->
+</dependency>
+
     </dependencies>
     
      <build>
