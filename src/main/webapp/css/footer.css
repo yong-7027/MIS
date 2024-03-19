@@ -1,0 +1,250 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 14 Mar 2024, 1:55:07 pm
+    Author     : zheng
+*/
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+:root {
+    --body-font: "Montserrat", sans-serif;
+    --font-size: 13px;
+    --light-color: #EBE3D5;
+    --background-color: #070F2B;
+    --font-color: #9290C3;
+
+    /*    --background-color: #0F1035;
+        --font-color: #DCF2F1;
+        
+        --background-color: #F3EEEA;
+        --font-color: #776B5D;
+        
+        --background-color: #272829;
+        --font-color: #FFF6E0;*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    font-family: var(--body-font);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: var(--background-color);
+    color: var(--font-color);
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: var(--font-size);
+    line-height: 20px;
+}
+
+.footer__row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;  /* When there is not enough space, the child element will be displayed on the next line */
+    align-items: flex-start;
+    justify-content: space-between
+}
+
+.footer__col {
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.footer__col:nth-child(2), .footer__col:nth-child(3) {
+    flex-basis: 15%;
+}
+
+.footer__logo {
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.footer__col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.footer__email {
+    width: fit-content;
+    /*border-bottom: 1px solid #ccc;*/
+    margin: 20px 0;
+}
+
+.link__list li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+.link__list li a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.link__list li a:hover {
+    color: var(--light-color);
+}
+
+.footer__email__form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--font-color);
+    margin-bottom: 50px;
+}
+
+.footer__email__form .email__icon {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.footer__email__form input {
+    width: 100%;
+    background: transparent;
+    color: var(--light-color);
+    border: 0;
+    outline: none;
+}
+
+.footer__email__form input[type=email]::placeholder {
+    color: var(--font-color);
+}
+
+.footer__email__form button {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.footer__email__form button .arrow__right {
+    font-size: 16px;
+    color: var(--font-color);
+}
+
+.footer__social {
+    display: flex;
+    align-items: center;
+}
+
+.footer__social .icons {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--font-color);
+    background: var(--background-color);
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.original-icon,
+.hover-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 0.3s ease-out;
+}
+
+.original-icon {
+    pointer-events: initial;
+}
+
+.hover-icon {
+    top: 100%;  /* 初始位置在原始图标的下方 */
+    color: var(--light-color);  /* 悬停时出现的图标的颜色 */
+    opacity: 0;  /* 初始时透明度为0，使其不可见 */
+    pointer-events: none;
+}
+
+.icons:hover .original-icon {
+    top: -100%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.icons:hover .hover-icon {
+    top: 0;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+footer hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.footer__copyright {
+    text-align: center;
+}
+
+.footer__underline {
+    width: 100%;
+    height: 3px;
+    background: var(--font-color);
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+
+.footer__underline span {
+    width: 15px;
+    height: 100%;
+    background: var(--light-color);
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+
+@keyframes moving {
+    0% {
+        left: -20px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    footer {
+        bottom: unset;
+    }
+
+    .footer__col {
+        flex-basis: 100%;
+    }
+
+    .footer__col:nth-child(2), .footer__col:nth-child(3) {
+        flex-basis: 100%;
+    }
+
+    /*    .footer__social i {
+            font-size: 30px;
+        }*/
+}
+
+/*@media screen and (max-width: 248px) {
+    .footer__social i {
+        font-size: 20px;
+    }
+}*/

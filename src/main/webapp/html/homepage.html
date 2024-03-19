@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@500;700&family=Ma+Shan+Zheng&family=Oswald:wght@700&family=Poppins:wght@100;200;300;400;500;600;700;900&family=Roboto:wght@500;900&display=swap');
+        </style>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href="../css/homepage.css" rel="stylesheet" type="text/css"/>
+        <title>Musical Instrument Store</title>
+    </head>
+
+    <body>
+        <div class="msg-icon"><i class="fa-sharp fa-solid fa-headset"></i></div>
+
+        <!-- Swiper -->
+        <section class="home swiper" id="home">
+            <div class="swiper-wrapper">
+                <!-- Box 1 -->
+                <div class="swiper-slide container" style="display: flex; align-items: center;">
+                    <img src="../images/img1.jpg" alt="" />
+                    <div class="home-text">
+                        <span>Demon Slayer:<br>Swordsmith Village</span><br><br>
+                    </div>
+                </div>
+                <!-- Box 2 -->
+                <div class="swiper-slide container" style="display: flex; align-items: center;">
+                    <img src="../images/img2.jpg" alt="" />
+                    <div class="home-text">
+                        <span>Your Name</span><br><br>
+                    </div>
+                </div>
+                <!-- Box 3 -->
+                <div class="swiper-slide container" style="display: flex; align-items: center;">
+                    <img src="../images/img4.jpg" alt="" />
+                    <div class="home-text">
+                        <span>Venom: Let There <br/> Be Carnage</span><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </section>
+
+        <!-- Services -->
+        <section class="service" style="margin-top: 100px">
+            <h1>Services We Offer</h1>
+            <p>Description..........</p>
+
+            <div class="service_row">
+                <div class="service_col">
+                    <h3><span class="orange-text">Free</span> Shipping</h3>
+                    <p>On more than 9000+ items store wide</p>
+                </div>
+
+                <div class="service_col">
+                    <h3><span class="orange-text">Same Day</span> Delivery</h3>
+                    <p>Grab & Lalamove Within KL/PJ</p>
+                </div>
+
+                <div class="service_col">
+                    <h3>Buy Now, <span class="orange-text">Pay Later</span></h3>
+                    <p>0% Installment on Debit & Credit Card</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category -->
+        <div class="category_title" style="margin-top: 100px">
+            <h1>Shop by Category</h1>
+        </div>
+        <section class="category">
+            <div class="swiper categorySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/category1.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category2.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category3.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category4.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category5.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category6.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category7.jpg" alt="" /></div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-navBtn">
+                <div class="swiper-button-next"><img src="../images/next.png" /></div>
+                <div class="swiper-button-prev"><img src="../images/prev.png" /></div>
+            </div>
+        </section>
+
+        <!-- Hot Products -->
+        <section class="tranding" style="margin-top: 80px">
+            <h1>Hot Products</h1>
+            <p>Description..........</p>
+
+            <div class="tranding_container">
+                <div class="swiper tranding-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../images/hot_product1.png" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <h1 class="food-price">$20</h1>
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Special Pizza
+                                    </h2>
+                                    <div class="food-rating">
+                                        <span>4.5</span>
+                                        <div class="rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../images/hot_product2.png" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <h1 class="food-price">$20</h1>
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Meat Ball
+                                    </h2>
+                                    <div class="food-rating">
+                                        <span>4.5</span>
+                                        <div class="rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../images/hot_product3.png" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <h1 class="food-price">$40</h1>
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Burger
+                                    </h2>
+                                    <div class="food-rating">
+                                        <span>4.5</span>
+                                        <div class="rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../images/hot_product4.png" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <h1 class="food-price">$15</h1>
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Frish Curry
+                                    </h2>
+                                    <div class="food-rating">
+                                        <span>4.5</span>
+                                        <div class="rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../images/hot_product5.png" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <h1 class="food-price">$15</h1>
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Pane Cake
+                                    </h2>
+                                    <div class="food-rating">
+                                        <span>4.5</span>
+                                        <div class="rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../images/hot_product6.png" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <h1 class="food-price">$20</h1>
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Vanilla cake
+                                    </h2>
+                                    <div class="food-rating">
+                                        <span>4.5</span>
+                                        <div class="rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="../images/hot_product7.png" alt="Tranding">
+                            </div>
+                            <div class="tranding-slide-content">
+                                <h1 class="food-price">$8</h1>
+                                <div class="tranding-slide-content-bottom">
+                                    <h2 class="food-name">
+                                        Straw Cake
+                                    </h2>
+                                    <div class="food-rating">
+                                        <span>4.5</span>
+                                        <div class="rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                    </div>
+
+                    <div class="tranding-slider-control">
+                        <div class="swiper-button-prev slider-arrow">
+                            <ion-icon name="arrow-back-outline"></ion-icon>
+                        </div>
+                        <div class="swiper-button-next slider-arrow">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand -->
+        <div class="category_title" style="margin-top: 0px; padding-top: 70px;">
+            <h1>Shop by Brands</h1>
+        </div>
+        <section class="category">
+            <div class="swiper categorySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/category1.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category2.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category3.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category4.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category5.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category6.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category7.jpg" alt="" /></div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-navBtn">
+                <div class="swiper-button-next"><img src="../images/next.png" /></div>
+                <div class="swiper-button-prev"><img src="../images/prev.png" /></div>
+            </div>
+        </section>
+
+        <!-- Branches -->
+        <!--        <section class="branches">
+                    <h1>Our Company Braches</h1>
+                    <p>Description...........</p>
+        
+                    <div class="branches_row">
+                        <div class="branches_col">
+                            <div class="branches_box">
+                                <img src="../images/branch1.jpg" alt=""/>
+                                <div class="branches_text">
+                                    <h3>Branch 1</h3>
+                                    <p>Description.....</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="branches_col">
+                            <div class="branches_box">
+                                <img src="../images/branch2.jpg" alt=""/>
+                                <div class="branches_text">
+                                    <h3>Branch 2</h3>
+                                    <p>Description.....</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="branches_col">
+                            <div class="branches_box">
+                                <img src="../images/branch3.jpg" alt=""/>
+                                <div class="branches_text">
+                                    <h3>Branch 3</h3>
+                                    <p>Description.....</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>-->
+
+        <!-- Music Band -->
+        <section class="music_band" style="margin-top: 100px">
+            <div class="music_band_row">
+                <div class="music_band_img">
+                    <img src="../images/hujan.jpg" alt="" />
+                </div>
+
+                <div class="music_band_content">
+                    <h3>Music Like <span class="orange-text">Hujan</span></h3>
+
+                    <p>Welcome to MIStore, Malaysia's leading destination for musical instruments! 
+                        With a passion for music and a dedication to customer satisfaction, we offer a wide range of 
+                        high-quality instruments and equipment to musicians of all levels. From guitars to keyboards, 
+                        drums to amplifiers, we have everything you need to fuel your musical journey. 
+                        Our knowledgeable team is here to provide personalized assistance and ensure you find the perfect 
+                        gear for your needs. Shop with confidence at MIStore and let your music soar!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials" style="margin-top: 100px">
+            <h1>Testimonials</h1>
+            <div class="testimonial testimonialSwiper">
+                <div class="testi-content swiper-wrapper">
+                    <div class="slide swiper-slide">
+                        <img src="../images/testimonial1.jpg" alt="" class="image" />
+                        <p>
+                            I recently purchased a guitar online and couldn't be happier with my experience. 
+                            The website was easy to navigate, and I found exactly what I was looking for quickly. 
+                            The ordering process was smooth, and my guitar arrived promptly and in perfect condition. 
+                            I was impressed with the quality of the instrument, and it exceeded my expectations.
+                        </p>
+                        <i class='bx bxs-quote-alt-left quote-icon' ></i>
+
+                        <div class="details">
+                            <span class="name">Photographer in Japan</span>
+                            <div class="rating">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide swiper-slide">
+                        <img src="../images/testimonial2.jpg" alt="" class="image" />
+                        <p>
+                            I recently purchased a guitar online and couldn't be happier with my experience. 
+                            The website was easy to navigate, and I found exactly what I was looking for quickly. 
+                            The ordering process was smooth, and my guitar arrived promptly and in perfect condition. 
+                            I was impressed with the quality of the instrument, and it exceeded my expectations.
+                        </p>
+                        <i class='bx bxs-quote-alt-left quote-icon' ></i>
+
+                        <div class="details">
+                            <span class="name">White Hair</span>
+                            <div class="rating">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide swiper-slide">
+                        <img src="../images/testimonial3.jpg" alt="" class="image" />
+                        <p>
+                            I recently purchased a guitar online and couldn't be happier with my experience. 
+                            The website was easy to navigate, and I found exactly what I was looking for quickly. 
+                            The ordering process was smooth, and my guitar arrived promptly and in perfect condition. 
+                            I was impressed with the quality of the instrument, and it exceeded my expectations.
+                        </p>
+                        <i class='bx bxs-quote-alt-left quote-icon' ></i>
+
+                        <div class="details">
+                            <span class="name">John Smith</span>
+                            <div class="rating">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next nav-btn"></div>
+                <div class="swiper-button-prev nav-btn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- About us -->
+        <section class="about_us" style="margin-top: 100px">
+            <h1>About Us</h1>
+
+            <div class="about_us_row">
+                <div class="about_us_content">
+                    <h3><span class="orange-text">Most Famous</span> Musical Instrument Store</h3>
+
+                    <p>Welcome to MIStore, Malaysia's leading destination for musical instruments! 
+                        With a passion for music and a dedication to customer satisfaction, we offer a wide range of 
+                        high-quality instruments and equipment to musicians of all levels. From guitars to keyboards, 
+                        drums to amplifiers, we have everything you need to fuel your musical journey. 
+                        Our knowledgeable team is here to provide personalized assistance and ensure you find the perfect 
+                        gear for your needs. Shop with confidence at MIStore and let your music soar!</p>
+
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+
+                <div class="about_us_img">
+                    <img src="../images/about_us.jpg" alt="" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Hot Products -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <!-- Link To Custom JS -->
+        <script src="../js/homepage.js"></script>
+    </body>
+</html>

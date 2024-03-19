@@ -1,0 +1,563 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 13 Mar 2024, 5:14:48 pm
+    Author     : zheng
+*/
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+/* Variable CSS */
+:root {
+    --header-height: 3.5rem;
+
+    /* Colors */
+    /* Color mode HSL(hue, saturation, lightness) */
+    --black-color: hsl(220, 24%, 12%);
+    --black-color-light: hsl(220, 24%, 15%);
+    --black-color-lighten: hsl(220, 20%, 18%);
+    --white-color: #fff;
+/*    --body-color: hsl(220, 100%, 97%);*/
+    --background-color: #070F2B;
+    --font-color: #9290C3;
+    --light-color: #EBE3D5;
+
+    /* Font and typography */
+    /* .5rem = 8px | 1rem = 16px */
+    --body-font: "Montserrat", sans-serif;
+    --normal-font-size: .938rem;
+
+    /* Font weight */
+    --font-regular: 400;
+    --font-semi-bold: 600;
+
+    /* Index */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+    :root {
+        --normal-font-size: 1rem;
+    }
+}
+
+/* Base */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--background-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Reusable CSS Classes */
+.container {
+    max-width: 85%;
+    margin-inline: 1.5rem;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+    z-index: var(--z-fixed);
+}
+
+/* Nav */
+.nav {
+    height: var(--header-height);
+}
+
+.nav__logo, .nav__burger, .nav__close {
+    color: var(--font-color);
+}
+
+.nav__data {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-weight: var(--font-semi-bold);
+}
+
+.nav__logo i {
+    font-weight: initial;
+    font-size: 1.25rem;
+}
+
+.nav__toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.nav__burger, .nav__close {
+    position: absolute;
+    width: max-content;  /* Make the width and height of an element automatically adjust according to its content */
+    height: max-content;
+    inset: 0;  /* Used to simultaneously set the element's top, right, bottom, and left positioning offsets to 0 */
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+    opacity: 0;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1275px) {
+    .nav__menu {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: gray;
+        height: calc(100vh - 3.5rem);
+        overflow: auto;
+        pointer-events: none;
+        opacity: 0;
+        transition: top .4s, opacity .3s;
+    }
+
+    .nav__menu::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .nav__list {
+        background-color: var(--background-color);
+        padding-top: 1rem;
+    }
+}
+
+.nav__link {
+    color: var(--font-color);
+    background-color: var(--background-color);
+    font-weight: var(--font-semi-bold);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__link:hover {
+    color: var(--light-color);
+}
+
+/* Show Menu */
+.show-menu {
+    opacity: 1;
+    top: 3.5rem;
+    pointer-events: initial;
+}
+
+/* Show Icon */
+.show-icon .nav__burger {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.show-icon .nav__close {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/* DropDown */
+.dropdown__item {
+    cursor: pointer;
+}
+
+.dropdown__arrow {
+    font-size: 1.25rem;
+    font-weight: initial;
+    transition: transform .4s;
+}
+
+.dropdown__link, .dropdown__sublink {
+    padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+    color: var(--font-color);
+    background-color: var(--black-color-light);
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    font-weight: var(--font-semi-bold);
+}
+
+.dropdown__link i, .dropdown__sublink i {
+    font-size: 1.25rem;
+    font-weight: initial;
+}
+
+.dropdown__link:hover, .dropdown__sublink:hover {
+    color: var(--light-color);
+}
+
+.dropdown__menu, .dropdown__submenu {
+    max-height: 0;  /* Hidden the content */
+    overflow: hidden;  /* When the content of an element exceeds its specified size, the excess is hidden. */
+    transition: max-height .4s ease-out;  /* Start at a faster pace and slow down gradually */
+}
+
+/* Show Dropdown Menu & Submenu */
+.dropdown__item:hover .dropdown__menu,
+.dropdown__subitem:hover > .dropdown__submenu {
+    max-height: 1000px;  /* Show the content */
+    transition: max-height .4s ease-in;  /* Start at a slower pace and then gradually accelerate */
+}
+
+/* Rotate dropdown icon */
+.dropdown__item:hover .dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Submenu */
+.dropdown__add {
+    margin-left: auto;
+}
+
+.dropdown__sublink {
+    background-color: var(--black-color-lighten);
+}
+
+/* BreakPoints */
+/* For Small Devices */
+@media screen and (max-width: 340px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .nav__link {
+        padding-inline: 1rem;
+    }
+}
+
+/* For Large Devices */
+@media screen and (min-width: 1275px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .nav {
+        height: calc(var(--header-height) + 2rem);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__list {
+        height: 100%;
+        display: flex;
+        column-gap: 3rem;
+    }
+
+    .nav__link {
+        height: 100%;
+        padding: 0;
+        justify-content: initial;
+        column-gap: .25rem;
+    }
+
+    .nav__link:hover {
+        background-color: transparent;
+    }
+
+    .dropdown__item, .dropdown__subitem {
+        position: relative;
+    }
+
+    .dropdown__menu, .dropdown__submenu {
+        max-height: initial;
+        overflow: initial;
+        position: absolute;
+        top: 6rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s, top .3s;  /* For hidden */
+    }
+
+    .dropdown__link, .dropdown__sublink {
+        padding-inline: 1rem 3.5rem;
+    }
+
+    .dropdown__subitem .dropdown__link {
+        padding-inline: 1rem;
+    }
+
+    .dropdown__submenu {
+        position: absolute;
+        left: 100%;
+        top: .5rem;
+    }
+
+    /* Show Dropdown Menu */
+    .dropdown__item:hover .dropdown__menu {
+        opacity: 1;
+        top: 5.5rem;
+        pointer-events: initial;
+        transition: top .3s;
+    }
+
+    /* Show Dropdown Submenu */
+    .dropdown__subitem:hover > .dropdown__submenu {
+        opacity: 1;
+        top: 0;
+        pointer-events: initial;
+        transition: top .3s;
+    }
+}
+
+/* Search Bar */
+header .nav__searchbar {
+    position: relative;
+    margin-left: 80px;
+    margin-right: 50px;
+}
+
+header .nav__searchbar input{
+    padding: 8px 35px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, .3);
+    color: #fff;
+}
+
+header .nav__searchbar input::placeholder{
+    color: #fff;
+}
+
+header .nav__searchbar .search{
+    position: absolute;
+    width: 320px;
+    height: 270px;
+    left: 0;
+    top: 70px;
+    z-index: 99999;
+    overflow-y: auto; 
+}
+
+header .nav__searchbar .search::-webkit-scrollbar{
+    width: 5px;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+header .nav__searchbar .search::-webkit-scrollbar-thumb{
+    width: 5px;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+header .nav__searchbar .search:hover::-webkit-scrollbar{
+    visibility: visible;
+}
+
+header .nav__searchbar .search:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+
+header .nav__searchbar .search .card{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 3px 0px;
+    text-decoration: none;
+}
+
+header .nav__searchbar .search .card::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+header .nav__searchbar .search .card img{
+    width: 28px;
+    height: 90%;
+    border-radius: 2px;
+    margin-left: 8px
+}
+
+header .nav__searchbar .search .card .cont{
+    margin-left: 10px;
+    color: #fff;
+}
+
+header .nav__searchbar .search .card .cont h3{
+    font-size: 15px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 250px;
+}
+
+header .nav__searchbar .search .card .cont p{
+    font-size: 10px;
+    color: rgba(255, 255, 255, .8);
+}
+
+header .nav__searchbar .search .card .cont span{
+    color: yellow;
+    padding: 0px 3px;
+    font-weight: 500;
+}
+
+/* Profile */
+.button{
+    padding: 0.7rem 1.4rem;
+    background-color: #38FFFC;
+    color: #000;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    border: 1px solid #38FFFC;
+}
+
+.button:hover{
+    background-color: transparent;
+    color: #38FFFC;
+}
+
+.profile-image{
+    cursor: pointer !important;
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.headshot {
+    position: relative;
+    top: calc(var(--header-height) / 2.75);
+/*    display: flex;
+    align-items: center;*/
+    cursor: pointer !important;
+    height: 50px !important;
+    width: 50px !important;
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.container-image{
+    color: #38FFFC;
+    position: fixed;
+    right: 70px;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 10001;
+}
+
+.container-image .profile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000;
+    padding: 20px;
+    border: 5px solid #38FFFC;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1); 
+    text-align: center;
+    width: 400px;
+    border-radius: 5px;
+    min-height: 65vh;
+}
+
+.container-image .profile img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 30px;
+}
+
+.container-image .profile .headshot-big{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+.container-image .profile h3{
+    margin-top: 35px;
+    font-size: 20px;
+}
+
+.container-image .profile p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.update-profile-btn{
+    color: #000;
+    background-color: #38FFFC;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 8px 13px;
+    border: 1px solid #38FFFC;
+    margin-right: 15px;
+    transition-duration: 0.5s;
+}
+
+.logout{
+    color: #38FFFC !important;
+    background-color: #000;
+    font-size: 15px;
+    padding: 8px 13px;
+}
+
+.update-profile-btn:hover{
+    color: #38FFFC;
+    background-color: transparent;
+}
+
+/* Dark / Light Mode */

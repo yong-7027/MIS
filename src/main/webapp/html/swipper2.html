@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://kit.fontawesome.com/8d6dbf3dd8.js" crossorigin="anonymous"></script>
+
+        <!-- Demo styles -->
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            .category {
+                width: 100%;
+                height: 30vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .category .swiper {
+                width: calc(100% - 20%);
+                height: calc(30vh - 4rem);
+            }
+
+            .category .swiper-slide > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+            
+            .category .swiper-slide {
+                overflow: hidden;
+            }
+            
+            .category .swiper-pagination {
+                position: absolute;
+                top: 35vh;
+            }
+            
+            .category .swiper-navBtn {
+                position: absolute;
+                width: calc(100% - 10%);
+            }
+            
+            .category .swiper-navBtn div[class^="swiper-button"]::after {
+                display: none;
+            }
+            
+            .category .swiper-navBtn div[class^="swiper-button"] {
+                width: 45px;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                transition: background 0.4s;
+            }
+            
+            .category .swiper-navBtn div[class^="swiper-button"]:hover {
+                background: rgba(200, 200, 200, 0.7);
+            }
+            
+            .category .swiper-navBtn div[class^="swiper-button"] img {
+                width: 60%;
+            }
+            
+            .category .swiper-pagination-bullet-active {
+                width: 20px;
+                border-radius: 4px;
+                background: rgba(200, 200, 200, 0.8);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!-- Category -->
+        <section class="category">
+            <div class="swiper categorySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/category1.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category2.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category3.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category4.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category5.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category6.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="../images/category7.jpg" alt="" /></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-navBtn">
+                <div class="swiper-button-next"><img src="../images/next.png" /></div>
+                <div class="swiper-button-prev"><img src="../images/prev.png" /></div>
+            </div>
+        </section>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".categorySwiper", {
+                slidesPerView: 5,
+                spaceBetween: 50,
+                loop: true,
+                grabCursor: true,
+                freeMode: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                keyboard: {
+                    enabled: true,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    480: {
+                        slidesPerView: 2
+                    },
+                    768: {
+                        slidesPerView: 3
+                    },
+                    1200: {
+                        slidesPerView: 4
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
