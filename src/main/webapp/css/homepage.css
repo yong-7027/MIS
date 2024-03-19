@@ -176,6 +176,12 @@ body {
     height: calc(30vh - 4rem);
 }
 
+.category .swiper-wrapper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .category .swiper-slide > img {
     width: 150px;
     height: 150px;
@@ -698,6 +704,11 @@ body {
         margin-top: 30px;
     }
 
+    .category .swiper-slide > img {
+        width: 120px;
+        height: 120px;
+    }
+
     .branches_row {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
@@ -710,21 +721,22 @@ body {
         display: none;
     }
 
-    .about_us_row {
+    .about_us_row, .music_band_row {
         flex-direction: column;
         margin-top: 0px;
     }
 
-    .about_us_content, .about_us_img {
+    .about_us_content, .about_us_img, .music_band_content, .music_band_img {
         width: 100%;
         margin-right: 0;
+        margin-left: 0;
     }
 
     .about_us_img {
         margin-top: 30px;
     }
 
-    .about_us_content h3 {
+    .about_us_content h3, .music_band_content h3 {
         font-size: 22px;
         margin-top: 40px;
     }
