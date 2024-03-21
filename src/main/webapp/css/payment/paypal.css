@@ -1,0 +1,150 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 25 Mar 2023, 11:12:52 am
+    Author     : 60174
+*/
+
+body {
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+}
+
+hr {
+    width: 100%;
+    border-color: #38FFFC;
+}
+
+.container h2 {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    color: white;
+    /*    color: #4b6f89;      */
+}
+
+.checkout {
+    color: white;
+    font: 10px sans-serif;    
+    /*    color: #397c9c;*/
+}
+
+.flex1, .flex2 {
+    width: 48%;
+    margin: auto;
+}
+
+.table1 {
+    color: white;
+    width: 65%;
+    margin: auto;
+}
+
+.name, .contact-no {    
+    font: bold 13px sans-serif;
+}
+
+#name {
+    width: 100%;
+}
+
+.basicInfo {
+    width: 100%;
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+    height: 15px;
+    padding: 10px 0;
+    padding-left: 2%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    border: 1px solid white;
+    box-shadow: 0 1px 1px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    /*    border: 1px solid rgba(0,0,0,0.05);*/
+}
+
+.footTable .basicInfo {
+    padding-left: 6%;
+}
+
+.basicInfo:focus {   
+    box-shadow: 0 2px 4px 0 #cfd7df;
+}
+
+.basicInfo--webkit-autofill {
+    background-color: #fefde5;
+}
+
+input#name, input#contactNo {
+    font: 15px "Helvetica Neue", Helvetica, sans-serif;   
+}
+
+input#name:focus, input#contactNo:focus {
+    outline: none;
+    box-shadow: 0 2px 4px 0 #cfd7df;
+}
+
+input#name::placeholder, input#contactNo::placeholder {
+    font: 15px "Helvetica Neue", Helvetica, sans-serif;
+    color: #aab7c4;
+}
+
+#paypal-button-container {
+    margin-top: 200px;
+}
+
+/*----------- Invalid Input Message -----------*/
+#contactNo-error, #name-error {
+    position: absolute;
+    color:  red;
+    font: 10px sans-serif;
+}
+
+.invalid {
+    color: red;
+    border-color: red;
+    box-shadow: 0 2px 4px 0 red !important;
+}
+
+/*----------- Purchase Details Table Design -----------*/
+.table2 {
+    border: 1px solid black;
+    border-radius: 4px;
+    color: white;
+    background-color: #303030;
+    width: 65%;
+    margin: auto;
+    padding: 20px 5%;
+    padding-bottom: 200px;
+}
+
+.table2 th {
+    font: bold 20px sans-serif;
+    text-align: left;
+    padding-bottom: 10px;
+    
+}
+
+.space td {
+    padding: 15px 0;
+}
+
+

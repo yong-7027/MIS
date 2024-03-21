@@ -1,0 +1,236 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 7 May 2023, 2:45:18 pm
+    Author     : 60174
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Oswald:wght@700&family=Poppins:wght@100;200;300;400;500;600;700;900&family=Roboto:wght@500;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #222827;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.logo {
+    margin: 0px;
+    margin-left: 28px;
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 30px;
+    font-size: 46px;
+}
+
+.logo span {
+    color: gold;
+    font-size: 46px;
+}
+
+.sidebar{ 
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #2d353c;
+    overflow: hidden;
+    transform: 0.5s;
+    padding-top: 30px;
+}
+.sidebar a{
+    padding: 15px 8px 15px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #8b8989;
+    display: block;
+    transform: 0.5s;
+}
+
+.sidebar a:hover{
+    color: rgb(240, 240, 240);
+    background-color: rgb(79, 76, 76);
+}
+
+#main{
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 300px;
+}
+
+.head{
+    padding: 20px;
+}
+
+.col-div-6{
+    width: 50%;
+    float: left;
+}
+
+.dashboard {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.profile{
+    display: inline;
+    float: right;
+    width: 200px;
+    margin-bottom: 14px;
+}
+
+.profile p{
+    color: white;
+    font-weight: 500;
+    margin-left: 55px;
+    margin-top: 10px; 
+    font-size: 18.5px ;
+}
+
+.profile p span{
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    color: rgb(210, 209, 210); 
+}
+
+.pro-img{
+    float: left;
+    width: 50px;
+    margin-top: 0px;
+}
+
+.nav2{
+    display: none;
+}
+
+.col-div-3{
+    width: 25%;
+    float: left;
+}
+
+.box{
+    width: 85%;
+    height: 100px;
+    background-color: #2d353c;
+    margin-left: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.box p{
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.box p span{
+    font-size: 20px;
+    font-weight: 400;
+    color: #e7e1e1;
+}
+
+.box-icon{
+    font-size: 40px!important;
+    float: right;
+    margin-top: 35px!important;
+    color: #b1b7ae;
+    padding-right: 10px;
+}
+
+.col-div-8{
+    width: 103%;
+    float: left;
+}
+
+.col-div-4{
+    width: 30%;
+    float: left;
+}
+
+.content-box{
+    padding: 20px;
+}
+
+.heading{
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, auto));
+}
+
+.content-box .heading p {
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    margin-top: 35px;
+    margin-left: 40px;
+    font-size: 35px;
+    color: #adb5bd;
+    font-weight: 400;
+    display: flex;
+}
+
+.heading div{
+    margin-top: 42px;
+}
+
+.form-inline{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 35px;
+}
+
+.box-8, .box-4{
+    width: 96.5%;
+    background-color:#2d353c ;
+    height: 640px;
+    border-radius: 5px;
+    overflow:auto ;
+}
+
+::-webkit-scrollbar{
+    display:none;
+ }
+
+.box-8{
+    margin-left: 10px;
+    width: 95%;
+}
+
+.container{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+
+.jumbotron{
+    position: relative;
+    left: 25px;
+    flex-grow: 0.67;
+    padding-top: 40px;
+    margin-top: 25px;
+}
+
+
+.form-group p {
+    font-size: 15px;
+}
+
+#contactNo-error, #name-error, #paymentMethod-error {
+    position: absolute;
+    color:  red;
+    font: 10px sans-serif;
+}

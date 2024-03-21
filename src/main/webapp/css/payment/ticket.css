@@ -1,0 +1,166 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 9 Apr 2023, 7:43:34 pm
+    Author     : 60174
+*/
+
+/*-------- Background --------*/
+body {
+    background-image: -webkit-linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../image/signup_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+/*-------------- Set Heading ----------------*/
+h1 {
+    color: white;
+    text-align: center;
+    margin: 30px 0;
+    font-family: Arial;
+}
+
+/*-------------- Set Ticket Flex Container ----------------*/
+.ticket-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+/*-------------- Set Term and Condition Flex Container ----------------*/
+.terms-container {
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+/*-------------- Term and Condition Design ----------------*/
+ul {
+    flex-basis: 50%;
+}
+
+ul.terms1 li:first-of-type {
+    list-style-type: none;
+    text-decoration: underline;
+    padding-bottom: 0;
+}
+
+ul li {
+    width: 100%;
+    text-align: justify;
+    line-height: 1.2;
+    padding-bottom: 7px;
+}
+
+.terms2 {
+    margin-top: 40px;
+}
+
+/*-------------- Online Payment Ticket Design ----------------*/
+.ticket {
+    margin: auto;
+    position: relative;
+    border: 1px solid #38FFFC;
+    width: 70%;
+}
+
+.logo {
+    position: relative;
+    top: -35px;
+    left: -2%;
+}
+
+.cinemaName {
+    width: 15%;
+    font: italic bold 17px 'Times New Roman';
+    position: relative;
+    top: -34px;
+    right: 7%;
+}
+
+.ticket h2 {
+    font: bold 30px Arial;
+    position: relative;
+    top: -34px;   
+}
+
+.ticket thead td:last-child {
+    position: absolute; 
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;   
+}
+
+.ticket .title {
+    position: relative;
+    top: -50px;
+    left: 4%;
+}
+
+.ticket .colon {
+    position: relative;
+    top: -50px;
+}
+
+.ticket .details {
+    position: relative;
+    top: -50px;
+    left: -8%;
+}
+
+/*-------------- Set BUtton Flex Container ----------------*/
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+/*-------------- Print Button Design ----------------*/
+#print {    
+    background-color: #0070ba;
+    color: #fff;
+    border: none;
+    padding: 10px 2%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+#print:hover {
+    background-color: #009cde;
+}
+
+/*-------------- Home Page Button Design ----------------*/
+#homepage {
+    color: black;
+    background-color: #38FFFC;
+    font: bold 20px sans-serif;
+    padding: 0 3%;
+    border-radius: 6px;
+    border-top: none;
+    border-left: none;
+    transition: all 0.5s;
+}
+
+#homepage:hover {
+    color: #38FFFC;
+    background-color: black;
+    border: 1px solid #38FFFC;
+    cursor: pointer;
+}
+

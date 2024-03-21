@@ -1,0 +1,200 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 9 Apr 2023, 8:19:07 pm
+    Author     : 60174
+*/
+
+/*-------- Background --------*/
+body {
+    background-image: -webkit-linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../image/signup_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 30px 0;
+    font-family: Arial;
+}
+
+/*-------------- Set Invoice Flex Container ----------------*/
+.invoice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+/*-------------- TABLE Design ----------------*/
+
+.invoice {
+    margin: auto;
+    padding-bottom: 50px;
+    position: relative;
+    border: 1px solid #38FFFC;
+    width: 95%;
+}
+
+/*-------------- THEAD Design ----------------*/
+.header td {
+    font: bold 20px Helvetica;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+thead hr {
+    border-color: #38FFFC;
+}
+
+/*-------------- TBODY Design ----------------*/
+tbody {
+    margin: auto;
+}
+
+tbody .logo {
+    text-align: center;
+    font: 20px 'Trajan Pro', sans-serif;
+}
+ 
+.invoice .title {
+    position: relative;
+    left: 5%;
+    width: 20%;
+}
+
+.invoice .colon {    
+    width: 3%;
+    position: relative;
+    left: -7%; 
+}
+
+.invoice .details {
+    position: relative;
+    left: -18%; 
+}
+
+.bottom td {
+    padding-bottom: 50px;
+}
+
+/*-------------- TFOOT Design ----------------*/
+
+tfoot {
+    position: relative;
+    left: 25%;  
+}
+
+.table td:nth-child(odd) {
+    width: 30%;
+    padding: 10px 10px;
+    border-top: 1px solid #38FFFC;
+    border-left: 1px solid #38FFFC;
+    border-right: 1px solid #38FFFC;
+}
+
+.table td:nth-child(even) {
+    width: 20%;
+    padding: 10px 10px;
+    text-align: center;
+    border-top: 1px solid #38FFFC;
+    border-right: 1px solid #38FFFC;
+}
+
+.table tr:nth-child(3) td {
+    border-top: none;
+}
+
+.table tr:nth-child(5) td {
+    border-top: none;
+}
+
+.table tr:last-child td {
+    border-bottom: 1px solid #38FFFC;
+}
+
+/*-------------- Set Term and Condition Flex Container ----------------*/
+.terms-container {
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+/*-------------- Term and Condition Design ----------------*/
+ul {
+    flex-basis: 50%;
+}
+
+ul.terms1 li:first-of-type {
+    color: white;
+    list-style-type: none;
+    text-decoration: underline;
+    padding-bottom: 0;
+}
+
+ul li {
+    width: 100%;
+    text-align: justify;
+    line-height: 1.2;
+    padding-bottom: 7px;
+}
+
+.terms2 {
+    margin-top: 40px;
+}
+
+/*-------------- Set Button Flex COntainer ----------------*/
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+/*-------------- Print Button Design ----------------*/
+#print {    
+    background-color: #0070ba;
+    color: #fff;
+    border: none;
+    padding: 10px 2%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+#print:hover {
+    background-color: #009cde;
+}
+
+/*-------------- View Button Design ----------------*/
+#viewTicket {
+    color: black;
+    background-color: #38FFFC;
+    font: bold 20px sans-serif;
+    padding: 0 3%;
+    border-radius: 6px;
+    border-top: none;
+    border-left: none;
+    transition: all 0.5s;
+}
+
+#viewTicket:hover {
+    color: #38FFFC;
+    background-color: black;
+    border: 1px solid #38FFFC;
+    cursor: pointer;
+}

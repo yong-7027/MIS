@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Payment Page</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row justify-content-center"> <!-- Step 1: 使用 justify-content-center 来水平居中 -->
+    <div class="col-lg-6 col-md-8 align-self-center"> <!-- Step 2: 使用 align-self-center 来垂直居中 -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Payment Details</h5>
+          <form>
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-lg-6">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY">
+              </div>
+              <div class="form-group col-lg-6">
+                <label for="cvv">CVV</label>
+                <input type="text" class="form-control" id="cvv" placeholder="CVV">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cardHolderName">Card Holder Name</label>
+              <input type="text" class="form-control" id="cardHolderName" placeholder="Enter card holder name">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Pay Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

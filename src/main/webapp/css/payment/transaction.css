@@ -1,0 +1,387 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 6 May 2023, 11:49:25 pm
+    Author     : 60174
+*/
+
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Oswald:wght@700&family=Poppins:wght@100;200;300;400;500;600;700;900&family=Roboto:wght@500;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #222827;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.logo {
+    margin: 0px;
+    margin-left: 28px;
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 30px;
+    font-size: 46px;
+}
+
+.logo span {
+    color: gold;
+    font-size: 46px;
+}
+
+.sidebar{ 
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #2d353c;
+    overflow: hidden;
+    transform: 0.5s;
+    padding-top: 30px;
+}
+.sidebar a{
+    padding: 15px 8px 15px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #8b8989;
+    display: block;
+    transform: 0.5s;
+}
+
+.sidebar a:hover{
+    color: rgb(240, 240, 240);
+    background-color: rgb(79, 76, 76);
+}
+
+#main{
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 300px;
+}
+
+.head{
+    padding: 20px;
+}
+
+.col-div-6{
+    width: 50%;
+    float: left;
+}
+
+.dashboard {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.profile{
+    display: inline;
+    float: right;
+    width: 200px;
+    margin-bottom: 14px;
+}
+
+.profile p{
+    color: white;
+    font-weight: 500;
+    margin-left: 55px;
+    margin-top: 10px; 
+    font-size: 18.5px ;
+}
+
+.profile p span{
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    color: rgb(210, 209, 210); 
+}
+
+.pro-img{
+    float: left;
+    width: 50px;
+    margin-top: 0px;
+}
+
+.nav2{
+    display: none;
+}
+
+.col-div-3{
+    width: 25%;
+    float: left;
+}
+
+.box{
+    width: 85%;
+    height: 100px;
+    background-color: #2d353c;
+    margin-left: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.box p{
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.box p span{
+    font-size: 20px;
+    font-weight: 400;
+    color: #e7e1e1;
+}
+
+.box-icon{
+    font-size: 40px!important;
+    float: right;
+    margin-top: 35px!important;
+    color: #b1b7ae;
+    padding-right: 10px;
+}
+
+.col-div-8{
+    width: 103%;
+    float: left;
+}
+
+.col-div-4{
+    width: 30%;
+    float: left;
+}
+
+.content-box{
+    width: 92%;
+    margin: auto;
+    padding: 20px;
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading h2 {
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    margin-top: 35px;
+    font-size: 35px;
+    color: #adb5bd;
+    font-weight: 400;
+    flex-grow: 1;
+}
+
+.heading .search-container {
+    margin-top: 35px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.heading .search-container input[type="text"] {
+    width: 200px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    margin-right: 8px;
+}
+
+.heading .search-container button[type="submit"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.heading .search-container button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.form-inline{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 35px;
+}
+
+.box-8, .box-4{
+    width: 96.5%;
+    background-color:#2d353c ;
+    height: 640px;
+    border-radius: 5px;
+    overflow:auto ;
+}
+
+::-webkit-scrollbar{
+    display:none;
+ }
+
+.box-8{
+    margin-left: 10px;
+    width: 95%;
+}
+
+.row{
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin-top: -25px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, auto));
+}
+
+
+.filter-container {
+    color: white;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.filter-header i {
+    margin-right: 10px;
+}
+
+.filter-header i, .filter-header span {
+    cursor: pointer;
+}
+
+.filter-row { 
+    display: none;
+}
+
+.filter-row table tr:first-child td:last-child {
+    padding-bottom: 10px;
+}
+
+.filter-row table {
+    width: 30%;
+}
+
+input[type="date"] {
+    font-size: 10px;
+    width: 60%;
+    height: 25px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #CDCDCD;
+    cursor: pointer;
+}
+
+.search-container2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-btn {
+    width: 70%;
+    background-color: #4CAF50;
+    margin-top: 15px;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-btn i {
+    font-size: 14px;
+}
+
+.search-btn:hover {
+    cursor: pointer;
+    background-color: #3e8e41;
+}
+
+.transaction-container {
+    width: 100%;
+    display: flex;
+    align-items: center;    
+}
+
+#table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;    
+}
+
+#table td {
+    border: 1px white solid;
+    padding: 6px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#table tr:first-child td {
+    padding: 11px;
+    background-color: #34495e;
+    font: bold 15px 'Poppins', sans-serif;
+}
+
+.transaction-container .title td {
+    color: white;
+}
+
+.view a, .edit a, .delete a {
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.view {
+    cursor: pointer;
+    background-color: #123d64;
+}
+
+.edit {
+    cursor: pointer;
+    background-color: #468dcb;
+}
+
+.delete {
+    cursor: pointer;
+    background-color: #dc3545;
+}
+
+.view:hover {
+    background-color: #0d2b46;
+}
+
+.edit:hover {
+    background-color: #2368a0;
+}
+
+.delete:hover {
+    background-color: #b71c1c;
+}
