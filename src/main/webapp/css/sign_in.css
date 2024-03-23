@@ -1,0 +1,363 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 22 Mar 2024, 6:06:22 pm
+    Author     : zheng
+*/
+
+@charset "utf-8";
+
+/* Some variables */
+@media (prefers-color-scheme: light) {
+    :root {
+        --text: #000;
+        --background: #fff;
+        --white: #fff;
+        --accent: #ff6c0e;
+        --service-box: #fff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #fff;
+        --background: #000;
+        --white: #fff;
+        --accent: #ff6c0e;
+        --service-box: #000;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Tilt Neon';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+    width: 100%;
+    height: 730px;
+    overflow: hidden;
+}
+
+#container{
+    position: absolute;
+    width: 80%;
+}
+
+.form h1{
+    color: var(--text);
+    font-family: 'Nunito Sans';
+    font-size: 38px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin-bottom: 80px;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slideshow{
+    flex-basis: 55%;
+}
+
+.form{
+    flex-basis: 40%;
+    width: 50%;
+}
+
+.form label{
+    position: absolute;
+    height: 100%;
+    top: 15px;
+    left: 15px;
+    color: darkgray;
+    font-size: 18px;
+    cursor: text;
+    transition-duration: 0.4s;
+}
+
+span.star{
+    position: absolute;
+    color: red;
+    font-size: 10px;
+    transition-duration: 0.1s;
+}
+
+.info{
+    position: relative;
+    margin-bottom: 60px;
+/*    border-bottom: 3px solid var(--text);*/
+}
+
+.info input{
+    font-size: 17px;
+    width: 100%;
+    padding: 25px 15px 7px;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    color: var(--text);
+    background: transparent;
+}
+
+.info input:focus {
+    border-color: #933900;
+    outline: 0;
+    box-shadow: 0 2px 6px #00000026, 0 0 0 0.5px #a74100;
+}
+
+.info input:focus ~ label,
+.info input:valid ~ label{
+    top: 5px;
+    font-size: 14px;
+}
+
+.info input:focus ~ label .star,
+.info input:valid ~ label .star{
+    color: transparent;
+}
+
+i{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    color: darkgray; 
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#error-message-1{
+    position: absolute;
+    top: 60px;
+    color: red;
+}
+
+#error-message-2{
+    position: absolute;
+    top: 60px;
+    color: red;
+}
+
+/* Remember checkbox */
+.form .checkbox label{
+    position: relative;
+    left: 15px;
+    top: 0;
+    cursor: pointer;
+}
+
+.form .checkbox a{
+    position: absolute;
+    right: 0;
+    color: darkgray;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Sign in button */
+.form-submit input{
+    padding: 7px 32px;
+    color: var(--background);
+    font: bolder 23px Poppins;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: var(--accent);
+    cursor: pointer;
+    margin-top: 50px;    
+    margin-bottom: 50px;
+    transition-duration: 0.5s;
+}
+
+.form-submit input:hover{
+    background-color: rgb(255, 123, 38);
+}
+
+.form-submit input:active{
+    transform: scale(0.98);
+}
+
+/* Sign up button */
+.signup-btn div{
+    color: var(--text);
+    font: 25px Poppins;
+    margin-bottom: 20px;
+}
+
+.signup-btn a{
+    color: var(--accent);
+    text-decoration: none;
+    padding: 10px 25px;
+    font: bolder 19px Poppins;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--background);
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.signup-btn a:hover{
+    color: var(--background);
+    background-color: var(--accent);
+}
+
+/* Animation */
+.box .slideshow label {
+    opacity: 0;
+    animation: fade-in 5s ease-out forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#slide1 {
+    animation-delay: 0s;
+}
+
+#slide2 {
+    animation-delay: 1.6s;
+}
+
+#slide3 {
+    animation-delay: 3.2s;
+}
+
+#slide4 {
+    animation-delay: 2.4s;
+}
+
+#slide5 {
+    animation-delay: 0.8s;
+}
+
+.box .form h1{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 4s;
+}
+
+.box .form #child1{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 4.3s;
+}
+
+.box .form #child2{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 4.6s;
+}
+
+.box .form .checkbox{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 4.9s;
+}
+
+.box .form .form-submit{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 5.2s;
+}
+
+.box .form .signup-btn div, .box .form .signup-btn a{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 5.5s;
+}
+
+.box .form .signup-btn a{
+    animation-delay: 6.1s;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Screen */
+@media screen and (max-width: 1246px) {
+    body {
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .box{
+        display: block;
+    }
+
+    .slideshow{
+        display: none;
+    }
+    
+    .form{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 574px) {       
+    .form h1{
+        font-size: 30px;
+    }
+    
+    .form label, .form .checkbox a, #error-message-1, #error-message-2{
+        font-size: 15px;
+    }
+    
+    span.star{
+        font-size: 7px;
+    }
+    
+    .info input{
+        font-size: 17px;
+    }
+    
+    .info input:focus ~ label,
+    .info input:valid ~ label{
+        top: -28px;
+        font-size: 13px;
+    }
+    
+    .form-submit input{
+        font-size: 17px;
+    }
+    
+    .signup-btn div{
+        font-size: 20px;
+    }
+    
+    .signup-btn a{
+        font-size: 14px;
+    }
+}

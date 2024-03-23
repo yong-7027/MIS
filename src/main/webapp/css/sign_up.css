@@ -1,0 +1,390 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 20 Mar 2024, 4:37:10 pm
+    Author     : zheng
+*/
+
+/* Some variables */
+@media (prefers-color-scheme: light) {
+    :root {
+        --text: #000;
+        --background: #fff;
+        --white: #fff;
+        --accent: #ff6c0e;
+        --service-box: #fff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #fff;
+        --background: #000;
+        --white: #fff;
+        --accent: #ff6c0e;
+        --service-box: #000;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Tilt Neon';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+    width: 100%;
+    height: 730px;
+    overflow: hidden;
+}
+
+#container{
+   position: absolute;
+   width: 60%;
+}
+
+.title{
+    display: flex;
+}
+
+.form-title{
+    color: var(--text);
+    font-family: 'Nunito Sans';
+    font-size: 38px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin-bottom: 70px;
+}
+
+label{
+    position: absolute;
+    height: 100%;
+    top: 15px;
+    left: 15px;
+    color: darkgray;
+    font-size: 18px;
+    cursor: text;
+    transition-duration: 0.4s;
+}
+
+span.star{
+    position: absolute;
+    color: red;
+    font-size: 10px;
+    transition-duration: 0.1s;
+}
+
+i{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: darkgray; 
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.info{
+    position: relative;
+    margin-bottom: 5px;
+/*    border-bottom: 3px solid var(--accent);*/
+}
+
+.info input{
+    font-size: 17px;
+    width: 100%;
+    padding: 25px 15px 7px;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    color: var(--text);
+    background: transparent;
+}
+
+.info input:focus {
+    border-color: #933900;
+    outline: 0;
+    box-shadow: 0 2px 6px #00000026, 0 0 0 0.5px #a74100;
+}
+
+.row-1{
+    margin-bottom: 80px;
+}
+
+.row-2{
+    margin-bottom: 80px;
+}
+
+.form-submit input{
+    padding: 7px 32px;
+    color: var(--background);
+    font: bolder 23px Poppins;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: var(--accent);
+    cursor: pointer;
+    margin-top: 50px;    
+    transition-duration: 0.5s;
+}
+
+.form-submit input:hover{
+    background-color: rgb(255, 123, 38);
+}
+
+.form-submit input:active{
+    transform: scale(0.98);
+}
+
+.info input:focus ~ label,
+.info input:valid ~ label{
+    top: 5px;
+    font-size: 14px;
+}
+
+.info input:focus ~ label .star,
+.info input:valid ~ label .star{
+    color: transparent;
+}
+
+.row-1, .row-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row-1 .info, .row-2 .info{
+    flex-basis: 45%;
+}
+
+#error_message_1{
+    color: red;
+    position: absolute;
+    top: 60px;
+}
+
+#error_message_2{
+    color: red;
+    position: absolute;
+    top: 60px;
+}
+
+#error_message_3{
+    color: red;
+    position: absolute;
+    top: 60px;
+}
+
+#error_message_4{
+    color: red;
+    position: absolute;
+    top: 60px;
+}
+
+#psd-requirements{
+    color: var(--text);
+}
+
+#psd-requirements p{
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.invalid, .valid{
+    line-height: 2;
+    margin-left: 30px;
+}
+
+.requirement{
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* Add a checkmark when the requirements are right */
+.valid:before{
+    position: absolute;
+    left: 0;
+    content: "\2714";
+    font-weight: bolder;
+    color: #B5f63d;
+}
+
+/* Add an "x" when the requirements are wrong */
+.invalid:before{
+    position: absolute;
+    left: 0;
+    content: "\2716";
+    color: red;
+}
+
+.row-3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sign-in{
+    position: relative;
+    top: 25px;
+    color: var(--text);
+    font-size: 19px;
+}
+
+.sign-in div{
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.sign-in a{
+    position: relative;
+    left: 85px;
+    color: var(--text);
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#dice, #eye-1, #eye-2, #eye-3, #eye-4{
+    cursor: pointer;
+}
+
+/* Animation */
+#container .title{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+#container .row-1{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+#container .row-2{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 1.1s;
+}
+
+#container #psd-requirements p, #container #psd-requirements #letter, 
+#container #psd-requirements #capital, #container #psd-requirements #number, 
+#container #psd-requirements #length{
+    opacity: 0;
+    animation: fade 0.8s ease-out forwards;
+    animation-delay: 1.4s;
+}
+
+#container #psd-requirements #letter{
+    animation-delay: 1.7s;
+}
+
+#container #psd-requirements #capital{
+    animation-delay: 2.1s;
+}
+
+#container #psd-requirements #number{
+    animation-delay: 2.4s;
+}
+
+#container #psd-requirements #length{
+    animation-delay: 2.7s;
+}
+
+#container .row-3{
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 3.0s;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Mobile Size */
+@media screen and (max-width: 1246px) {  
+    body {
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 842px){
+    body{
+        display: block;
+        height: 900px;
+    }
+    
+    #container{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .row-1, .row-2{
+        display: block;
+        margin-bottom: 80px;
+    }
+    
+    .info{
+        margin-bottom: 80px;
+    }
+    
+    #error-message-1, #error-message-2, 
+    #error-message-3, #error-message-4{
+        font-size: 15px;
+    }
+
+    .info input{
+        font-size: 17px;
+    }
+    
+    #psd-requirements{
+        font-size: 15px;
+    }
+    
+    .form-submit input{
+        font-size: 19px;         
+    }
+}
+
+@media screen and (max-width: 540px){
+    body{
+        height: 1000px;
+    }
+    
+    .row-3{
+        display: block;
+    }
+    
+    .sign-in{
+        margin-top: 20px;
+    }
+    
+    .sign-in a{
+        left: 0;
+    }
+}
