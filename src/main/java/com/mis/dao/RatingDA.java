@@ -4,6 +4,7 @@
  */
 package com.misproject.dao;
 
+import com.mis.dbc.DBConnection;
 import com.misproject.model.Rating;
 import java.sql.*;
 import java.util.ArrayList;
