@@ -1,0 +1,230 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 17 Mar 2024, 11:52:10 pm
+    Author     : 60174
+*/
+
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 8 Apr 2023, 9:14:32 pm
+    Author     : 60174
+*/
+
+body {
+    background-color: white;
+    color: black;       
+}
+
+.header {
+    font: bold 20px sans-serif;
+}
+
+.progress {
+    height: 8.5px;
+}
+
+.avgRate {
+    font: 45px Calibri;
+}
+
+.star-text {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.star-light {
+    color:#e9ecef;
+}
+
+.close {
+    color: white;
+}
+
+.close:hover {
+    color: white;
+}
+
+
+
+.modal-content {
+    color: white;
+    background-color: black;
+    border: 1px solid grey;
+}
+
+
+/*--------------------------  Review  ---------------------------*/
+
+.rating-date {
+    color: white;
+}
+
+
+.review-container {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.headshot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #dc3545;
+    /*background-color: #2967B9;*/
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.rating-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.stars {
+    color: #f0ca45;
+}
+
+.star-light {
+    color: #ccc;
+}
+
+.rating-date {
+    margin-left: auto;
+    color: #999;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.review-info {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.rating-container{
+    margin-bottom: 300px;
+}
+
+/*--------------------------  Delete Button  ---------------------------*/
+.btnBackground {
+    width: 4.5%;
+    margin-left: auto;
+    padding-top: 10px;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 100%;
+    transition: all 0.2s;
+}
+
+.btnBackground:hover {
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0);
+    background-color: rgba(255,255,255,0.3);
+}
+
+#deletebtn {
+    color: #bbb;
+    font-size: 16px;
+    margin-left: auto;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+#delete-review {
+    display: none;
+    position: absolute;
+    right: 20.3%;
+    top: 245px;
+    background-color: white;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+#delete-review:hover {
+    background-color: #CDCDCD;
+    cursor: pointer;
+}
+
+
+/*--------------------------  Pagnitation  ---------------------------*/
+/* 自定义 Cloudflare Pagination 插件的样式 */
+
+/* 分页容器样式 */
+.paginationjs {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    margin-top: 20px;
+    text-decoration: none; /* 取消文本装饰 */
+}
+
+ul {
+    padding: 0;
+}
+
+/* 分页按钮样式 */
+.paginationjs li {
+    display: inline-block;
+    border: none;
+    margin: 0 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    line-height: 1; 
+}
+
+/* 激活状态按钮样式 */
+.paginationjs li.active {
+    background-color: #ff8c00; /* light orange */
+    color: #fff; 
+}
+
+.paginationjs li:hover {
+    background-color: rgba(200,200,200,0.5);
+}
+
+/* 悬停状态按钮样式 */
+.paginationjs a:hover {
+    text-decoration: none;
+}
+
+/* 禁用状态按钮样式 */
+.paginationjs li.disabled {
+    opacity: 0.5;
+}
+
+
+/* 对于较小的屏幕，例如移动设备 */
+/*@media screen and (max-width: 768px) {
+  .paginationjs {
+      justify-content: center;
+  }
+}*/
+
+
+

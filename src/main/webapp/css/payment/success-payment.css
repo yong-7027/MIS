@@ -1,0 +1,226 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 6 Apr 2023, 9:47:17 am
+    Author     : 60174
+*/
+
+body {
+    background-color: black !important;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.invoice-container, .ticket-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+.flex1, .flex2 {
+    color: white !important;
+}
+
+/*-------------- TABLE Design ----------------*/
+
+.invoice {
+    margin: auto;
+    padding-bottom: 50px;
+    position: relative;
+    border: 1px solid white;
+    width: 95%;
+}
+
+/*-------------- THEAD Design ----------------*/
+
+.header td {
+    font: bold 20px Helvetica;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+/*-------------- TBODY Design ----------------*/
+
+tbody {
+    margin: auto;
+}
+
+tbody .logo {
+    text-align: center;
+    font: 20px 'Trajan Pro', sans-serif;
+}
+ 
+.invoice .title {
+    position: relative;
+    left: 5%;
+    width: 20%;
+}
+
+.invoice .colon {    
+    width: 3%;
+    position: relative;
+    left: -7%; 
+}
+
+.invoice .details {
+    position: relative;
+    left: -18%; 
+}
+
+.bottom td {
+    padding-bottom: 50px;
+}
+
+/*-------------- TFOOT Design ----------------*/
+
+tfoot {
+    position: relative;
+    left: 25%;  
+}
+
+.table td:nth-child(odd) {
+    width: 30%;
+    padding: 10px 10px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.table td:nth-child(even) {
+    width: 20%;
+    padding: 10px 10px;
+    text-align: center;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.table tr:nth-child(3) td {
+    border-top: none;
+}
+
+.table tr:nth-child(5) td {
+    border-top: none;
+}
+
+.table tr:nth-child(6) td {
+    border-bottom: 1px solid white;
+}
+
+.terms-container {
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+ul {
+    flex-basis: 50%;
+}
+
+ul.terms1 li:first-of-type {
+    list-style-type: none;
+    text-decoration: underline;
+    padding-bottom: 0;
+}
+
+ul li {
+    width: 100%;
+    text-align: justify;
+    line-height: 1.2;
+    padding-bottom: 7px;
+}
+
+.terms2 {
+    margin-top: 40px;
+}
+
+/*-------------- Print Button1 Design ----------------*/
+
+button {
+    position: relative;
+    left: 72%;
+    top: 40px;
+    margin-bottom: 50px;
+    background-color: #0070ba;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background-color: #009cde;
+}
+
+/*-------------- Online Payment Ticket Design ----------------*/
+
+.ticket {
+    margin: auto;
+    position: relative;
+    border: 1px solid white;
+    width: 70%;
+}
+
+.flex2 > h2 {
+    text-align: center;
+}
+
+.logo2 {
+    position: relative;
+    top: -35px;
+    left: -2%;
+}
+
+.cinemaName {
+    width: 15%;
+    font: italic bold 17px 'Times New Roman';
+    position: relative;
+    top: -34px;
+    right: 15%;
+}
+
+.ticket h2 {
+    font: bold 30px Arial;
+    position: relative;
+    top: -34px;
+    left: -13%;
+}
+
+.ticket thead td:last-child {
+    position: absolute; 
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;   
+}
+
+.ticket .title {
+    position: relative;
+    top: -50px;
+    left: 4%;
+}
+
+.ticket .colon {
+    position: relative;
+    top: -50px;
+    left: -8%;
+}
+
+.ticket .details {
+    position: relative;
+    top: -50px;
+    left: -20%;
+}
+
