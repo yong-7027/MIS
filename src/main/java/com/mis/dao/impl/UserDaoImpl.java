@@ -19,6 +19,9 @@ import com.mis.dao.UserDao;
  * @author zheng
  */
 public class UserDaoImpl implements UserDao {
+
+    public UserDaoImpl() {
+    }
     
     @Override
     public Map<String, Object> selectByUserName(String userName) throws SQLException {
@@ -160,6 +163,25 @@ public class UserDaoImpl implements UserDao {
             ps.setLong(2, lastAttemptTime);
             ps.setString(3, userName);
             
+            int rowAffected = ps.executeUpdate();
+            return rowAffected > 0;  
+        } catch(SQLException e) {
+            return false;
+        } finally {
+            DatabaseUtil.closeAll(conn, ps, null);
+        }
+    }
+
+    @Override
+    public boolean updateOTP(int otp, String email) throws SQLException {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        String sql = "UPDATE user SET OTP = ? WHERE email = ?LIMIT 1";
+        
+        try {
+            conn = DatabaseUtil.getConnection(); 
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, email);
             int rowAffected = ps.executeUpdate();
             return rowAffected > 0;  
         } catch(SQLException e) {

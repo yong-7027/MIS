@@ -4,10 +4,13 @@
  */
 package com.mis.service;
 
+import com.mis.pojo.Login;
+import java.io.IOException;
+
 /**
  *
  * @author zheng
  */
-public class UserService {
-    
+public interface LoginService {
+    public String processLogin(Login loginInfo) throws IOException;
 }

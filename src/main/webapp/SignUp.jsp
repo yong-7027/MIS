@@ -137,26 +137,35 @@
                             $("#error_message_4").text(response.confirm_pass).show();
                         }
                         if (response.url) {
-                            var token = response.token;
-                            var send_email = response.send_email;
+//                            var token = response.token;
+//                            var send_email = response.send_email;
                             var xhttp = new XMLHttpRequest();
+                            var emailData = {
+                                subject: "Email Verification from MIStore",
+                                content: "<h2>You have Registered with MIStore</h2>\n"
+                                        + "<h5>Verify your email address to Login with the below given link</h5>\n"
+                                        + "<br/><br/>\n"
+                                        + "<a href='http://localhost/MIS/email/verify?token=" + response.token + "'>Activate</a>",
+                                email: response.email
+                            };
 
                             xhttp.onreadystatechange = function () {
                                 if (this.readyState == 4 && this.status == 200) {
                                     console.log("Email sent successfully.");
                                 }
                             };
-                            xhttp.open("GET", "<%= request.getContextPath()%>/email/send?email=" + send_email + "&token=" + token, true); // send the sending verification email request to the send_email.php in GET method
-                            xhttp.send();
+                            
+                            xhttp.open("POST", "<%= request.getContextPath()%>/email/send", true);
+                            xhttp.setRequestHeader("Content-Type", "application/json");    
+                            xhttp.send(JSON.stringify(emailData));
 //                            window.location.href = response.url;
                         }
                     }
                 };
 
                 xmlhttp.open("POST", "<%= request.getContextPath()%>/customer/add", true);
-                formdata.forEach(function (value, key) {
-                    console.log(key + ": " + value);
-                });
+                console.log(JSON.stringify(formdata));
+                xmlhttp.setRequestHeader("Content-type", "application/json");
                 xmlhttp.send(formdata);
             }
         </script>

@@ -7,13 +7,14 @@ package com.mis.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Random;
 
 /**
  *
  * @author zheng
  */
-public class TokenGenerator {
-    private TokenGenerator() {
+public class CustomerUtil {
+    private CustomerUtil() {
     }
     
     public static String generateToken(int length) {
@@ -39,9 +40,22 @@ public class TokenGenerator {
             
             return token.toString();
         } catch (NoSuchAlgorithmException e) {
-            // 处理算法不支持的异常
-            e.printStackTrace();
             return null;
         }
+    }
+    
+    public static String generateOTP(int length) {
+        StringBuilder otp = new StringBuilder();
+        Random random = new Random();
+        
+        // Make sure the first digit of OTP is not 0
+        otp.append(random.nextInt(9) + 1);
+        
+        // Generate the remaining digits of OTP
+        for (int i = 1; i < length; i++) {
+            otp.append(random.nextInt(10));
+        }
+        
+        return otp.toString();
     }
 }

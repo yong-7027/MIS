@@ -5,7 +5,9 @@
 package com.mis.web.servlet;
 
 // GlassFish Server has comes with Jakarta Mail, so don't import Javax Mail, it will clash
+import com.google.gson.JsonObject;
 import com.mis.dao.impl.UserDaoImpl;
+import com.mis.util.RequestUtil;
 import jakarta.mail.Authenticator;
 import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
@@ -22,7 +24,6 @@ import jakarta.servlet.http.*;
 import java.util.Map;
 import java.util.Properties;
 
-
 /**
  *
  * @author zheng
@@ -31,6 +32,24 @@ import java.util.Properties;
 public class EmailServlet extends BaseServlet {
 
     public void send(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException, MessagingException {
+        String recipient;
+        String subject;
+        String content;
+
+        // 区分请求路径来从不同的地方获取数据
+        if (req.getRequestURI().contains("/customer/forgotPassword")) {
+            recipient = req.getParameter("email");
+            subject = req.getParameter("subject");
+            content = req.getParameter("content");
+        } else {
+            // Get the request in Json format (by using Gson package)
+            JsonObject jsonBody = RequestUtil.getBody(req);
+
+            recipient = jsonBody.get("email").getAsString();
+            subject = jsonBody.get("subject").getAsString();
+            content = jsonBody.get("content").getAsString();
+        }
+
         // Connection parameters for configuring the mail server
         Properties properties = new Properties();
 
@@ -44,8 +63,6 @@ public class EmailServlet extends BaseServlet {
 
         String companyEmail = "mistore040321@gmail.com";
         String password = "xiauluvkcwsywdhf";
-        String recipient = req.getParameter("email");
-        String token = req.getParameter("token");
 
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
@@ -58,16 +75,13 @@ public class EmailServlet extends BaseServlet {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("mistore040321@gmail.com"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipient));
-            message.setSubject("Email Verification from MIStore");
-            message.setContent("<h2>You have Registered with MIStore</h2>\n"
-                    + "            <h5>Verify your email address to Login with the below given link</h5>\n"
-                    + "            <br/><br/>\n"
-                    + "            <a href='http://localhost/MIS/email/verify?token=" + token + "'>Activate</a>", "text/html");
+            message.setSubject(subject);
+            message.setContent(content, "text/html");
 
             Transport.send(message);
 
             System.out.println("Email sent successfully!");
-            
+
             resp.sendRedirect("../hello.jsp");
 
         } catch (MessagingException e) {
@@ -85,12 +99,10 @@ public class EmailServlet extends BaseServlet {
                 if (result.get("verify_status").equals("0")) {
                     if (custDao.updateVerifyStatus(token)) {
                         resp.sendRedirect("hello.jsp");
-                    }
-                    else {
+                    } else {
                         resp.sendRedirect("hello.jsp");
                     }
-                }
-                else {
+                } else {
                     resp.sendRedirect("hello.jsp");
                 }
             }

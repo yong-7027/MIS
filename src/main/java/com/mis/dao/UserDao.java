@@ -20,4 +20,5 @@ public interface UserDao {
     public boolean updateVerifyStatus(String verifyToken) throws SQLException;
     public boolean resetLife(String userName) throws SQLException;
     public boolean updateLifeAndTime(int life, long lastAttemptTime, String userName) throws SQLException;
+    public boolean updateOTP(int otp, String email) throws SQLException;
 }
