@@ -85,6 +85,33 @@ public class UserDaoImpl implements UserDao {
     }
     
     @Override
+    public Map<String, Integer> selectOtpByEmail(String email) throws SQLException {
+        Map<String, Integer> result = new HashMap<>();
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "SELECT OTP FROM user WHERE email = ? LIMIT 1";
+        
+        try {
+            conn = DatabaseUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            
+            ps.setString(1, email);
+            
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                result.put("Otp", rs.getInt("OTP"));
+            }
+            
+            return result;
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            DatabaseUtil.closeAll(conn, ps, rs);
+        }
+    }
+    
+    @Override
     public boolean isExists(String columnName, String value) throws SQLException {
         String sql = "SELECT * FROM user WHERE " + columnName + " = ? LIMIT 1";
         try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -176,12 +203,33 @@ public class UserDaoImpl implements UserDao {
     public boolean updateOTP(int otp, String email) throws SQLException {
         Connection conn = null;
         PreparedStatement ps = null;
-        String sql = "UPDATE user SET OTP = ? WHERE email = ?LIMIT 1";
+        String sql = "UPDATE user SET OTP = ? WHERE email = ? LIMIT 1";
         
         try {
             conn = DatabaseUtil.getConnection(); 
             ps = conn.prepareStatement(sql);
-            ps.setString(1, email);
+            ps.setInt(1, otp);
+            ps.setString(2, email);
+            int rowAffected = ps.executeUpdate();
+            return rowAffected > 0;  
+        } catch(SQLException e) {
+            return false;
+        } finally {
+            DatabaseUtil.closeAll(conn, ps, null);
+        }
+    }
+    
+    @Override
+    public boolean updatePassword(String password, String email) throws SQLException {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        String sql = "UPDATE user SET password = ? WHERE email = ? LIMIT 1";
+        
+        try {
+            conn = DatabaseUtil.getConnection(); 
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, password);
+            ps.setString(2, email);
             int rowAffected = ps.executeUpdate();
             return rowAffected > 0;  
         } catch(SQLException e) {

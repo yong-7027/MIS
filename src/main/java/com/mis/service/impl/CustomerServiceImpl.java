@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.json.JSONObject;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
@@ -28,11 +29,11 @@ public class CustomerServiceImpl implements CustomerService {
     private UserDao userDao = new UserDaoImpl();
     
     @Override
-    public String processSignUp(JsonObject jsonBody) throws SQLException, IOException {
-        String userName = jsonBody.get("user-name").getAsString();
-        String email = jsonBody.get("email").getAsString();
-        String password = jsonBody.get("psd").getAsString();
-        String confirmPassword = jsonBody.get("confirm-psd").getAsString();
+    public String processSignUp(JSONObject jsonBody) throws SQLException, IOException {
+        String userName = jsonBody.getString("user-name");
+        String email = jsonBody.getString("email");
+        String password = jsonBody.getString("psd");
+        String confirmPassword = jsonBody.getString("confirm-psd");
         String token = CustomerUtil.generateToken(20);
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
@@ -67,7 +68,7 @@ public class CustomerServiceImpl implements CustomerService {
             try {
                 userDao.addCustomer(customer);
 
-                responses.put("url", "hello.jsp");
+                responses.put("url", "SignIn.jsp");
                 responses.put("token", token);
                 responses.put("send_email", email);
             } catch (SQLException e) {
@@ -82,8 +83,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
     
     @Override
-    public Map<String, String> forgetPassword(JsonObject jsonBody) throws SQLException, IOException {
-        String email = jsonBody.get("email").getAsString();
+    public Map<String, String> forgetPassword(JSONObject jsonBody) throws SQLException, IOException {
+        String email = jsonBody.getString("email");
         String otp = CustomerUtil.generateOTP(6);
         Map<String, String> responses = new HashMap<>();
         
@@ -99,11 +100,87 @@ public class CustomerServiceImpl implements CustomerService {
                     responses.put("error", " ");
                     responses.put("email", email);
                     responses.put("otp", otp);
+                    responses.put("url", "OTP.jsp");
                 }   
                 break;
             default:
                 responses.put("error", emailError);
                 break;
+        }
+        
+        return responses;
+    }
+    
+    // 0 - "OTP verification success."
+    // 1 - "OTP verification failed."
+    // 2 - "OTP is expired. Please resend it."
+    @Override
+    public int verifyOtp(String otp, String email, Long otpTime) throws SQLException, IOException {
+        Map<String, Integer> result = userDao.selectOtpByEmail(email);
+        int status = 1;
+        
+        if (!result.isEmpty()) {
+            // The OTP is valid for 1 minute only
+            long time_diff = (System.currentTimeMillis() - otpTime) / 1000;
+            
+            // check if the OTP is expired
+            if (time_diff <= 60) {
+                // if OTP entered is wrong, redirect user to ForgetPassword.jsp
+                // else redirect to PasswordReset.jsp
+                Integer storedOtp = result.get("otp");
+                if (storedOtp != null && storedOtp.equals(Integer.valueOf(otp))) {
+                    // OTP is valid
+                    status = 0;
+                }
+                else {
+                    // OTP is invalid
+                    status = 1;
+                }
+            }
+            else {
+                status = 2;
+            }
+            
+            // Clear the otp in db
+            userDao.updateOTP(-1, email);
+        }
+        
+        return status;
+    }
+    
+    @Override
+    public Map<String, String> passwordReset(JSONObject jsonBody, String email) throws SQLException, IOException {
+        String password = jsonBody.getString("psd");
+        String confirmPassword = jsonBody.getString("confirm-psd");
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
+        String passwordError = checkPassword(password);
+        String confirmPasswordError = checkConfirmPassword(password, confirmPassword);
+        
+        Map<String, String> responses = new HashMap<>();
+
+        if (!" ".equals(passwordError)) {
+            responses.put("password", passwordError);
+        }
+        
+        if (!" ".equals(confirmPasswordError)) {
+            responses.put("confirm_pass", confirmPasswordError);
+        }
+        
+        if (" ".equals(passwordError) && " ".equals(confirmPasswordError)) {
+
+            try {
+                if (userDao.updatePassword(hashedPassword, email)) {
+                    responses.put("url", "SignIn.jsp");
+                }
+
+//                unset($_SESSION['email']);
+//                $_SESSION['reset_status'] = 1;
+//                setcookie('username', '', time() - 10);
+//                setcookie('password', '', time() - 10);
+            } catch (SQLException e) {
+                // 处理数据库操作异常
+            }
         }
         
         return responses;

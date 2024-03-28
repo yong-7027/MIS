@@ -18,22 +18,19 @@ public class User {
     private Address address;
     private String phone;
     private Date joinDate;
-    private String verifyToken;
-    private int verifyStatus;
     private int life;
     private int lastAttemptTime;
 
     public User() {
     }
 
-    public User(Login login, String email, String verifyToken) {
+    public User(Login login, String email) {
         this.login = login;
         this.email = email;
         this.joinDate = new Date();
-        this.verifyToken = verifyToken;
     }
 
-    public User(Login login, int userId, String userType, String email, Address address, String phone, String verifyToken, int verifyStatus, int life, int lastAttemptTime) {
+    public User(Login login, int userId, String userType, String email, Address address, String phone, int life, int lastAttemptTime) {
         this.login = login;
         this.userId = userId;
         this.userType = userType;
@@ -41,8 +38,6 @@ public class User {
         this.address = address;
         this.phone = phone;
         this.joinDate = new Date();
-        this.verifyToken = verifyToken;
-        this.verifyStatus = verifyStatus;
         this.life = life;
         this.lastAttemptTime = lastAttemptTime;
     }
@@ -75,14 +70,6 @@ public class User {
         return joinDate;
     }
 
-    public String getVerifyToken() {
-        return verifyToken;
-    }
-
-    public int getVerifyStatus() {
-        return verifyStatus;
-    }
-
     public int getLife() {
         return life;
     }
@@ -109,14 +96,6 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public void setVerifyToken(String verifyToken) {
-        this.verifyToken = verifyToken;
-    }
-
-    public void setVerifyStatus(int verifyStatus) {
-        this.verifyStatus = verifyStatus;
     }
 
     public void setLife(int life) {

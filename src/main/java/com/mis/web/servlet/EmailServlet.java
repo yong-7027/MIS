@@ -23,6 +23,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.util.Map;
 import java.util.Properties;
+import org.json.JSONObject;
 
 /**
  *
@@ -35,19 +36,28 @@ public class EmailServlet extends BaseServlet {
         String recipient;
         String subject;
         String content;
+        String url;
 
         // 区分请求路径来从不同的地方获取数据
         if (req.getRequestURI().contains("/customer/forgotPassword")) {
             recipient = req.getParameter("email");
             subject = req.getParameter("subject");
             content = req.getParameter("content");
+            url = req.getParameter("url");
         } else {
             // Get the request in Json format (by using Gson package)
-            JsonObject jsonBody = RequestUtil.getBody(req);
+//            JsonObject jsonBody = RequestUtil.getBody(req);
+//
+//            recipient = jsonBody.get("email").getAsString();
+//            subject = jsonBody.get("subject").getAsString();
+//            content = jsonBody.get("content").getAsString();
+//            url = jsonBody.get("url").getAsString();
+            JSONObject jsonBody = new JSONObject(RequestUtil.getBody(req));
 
-            recipient = jsonBody.get("email").getAsString();
-            subject = jsonBody.get("subject").getAsString();
-            content = jsonBody.get("content").getAsString();
+            recipient = jsonBody.getString("email");
+            subject = jsonBody.getString("subject");
+            content = jsonBody.getString("content");
+            url = jsonBody.getString("url");
         }
 
         // Connection parameters for configuring the mail server
@@ -82,7 +92,7 @@ public class EmailServlet extends BaseServlet {
 
             System.out.println("Email sent successfully!");
 
-            resp.sendRedirect("../hello.jsp");
+            resp.sendRedirect(req.getContextPath() + "/" + url);
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);

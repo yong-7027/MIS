@@ -9,5 +9,20 @@ package com.mis.pojo;
  * @author zheng
  */
 public class Admin {
-    
+    private int accAvailable;
+
+    public Admin() {
+    }
+
+    public Admin(int accAvailable) {
+        this.accAvailable = accAvailable;
+    }
+
+    public int getAccAvailable() {
+        return accAvailable;
+    }
+
+    public void setAccAvailable(int accAvailable) {
+        this.accAvailable = accAvailable;
+    }
 }

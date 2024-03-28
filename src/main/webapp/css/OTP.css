@@ -1,0 +1,141 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 26 Mar 2024, 8:33:53 pm
+    Author     : zheng
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Oswald:wght@700&family=Poppins:wght@100;200;300;400;500;600;700;900&family=Roboto:wght@500;900&display=swap');
+
+/* Some variables */
+@media (prefers-color-scheme: light) {
+    :root {
+        --text: #000;
+        --background: #fff;
+        --white: #fff;
+        --accent: #ff6c0e;
+        --service-box: #fff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #fff;
+        --background: #000;
+        --white: #fff;
+        --accent: #ff6c0e;
+        --service-box: #000;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito Sans';
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--background);
+    width: 100%;
+    height: 730px;
+    overflow: hidden;
+}
+
+.otp-box{
+    display: flex;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+p{
+    margin-bottom: 50px;
+}
+
+.otp-box input{
+    width: 50px;
+    font-size: 32px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 2px;
+    border: 2px solid var(--accent);
+    background: var(--background);
+    font-weight: bold;
+    color: var(--text);
+    outline: none;
+    transition: all 0.1s;
+}
+
+.otp-box input:focus{
+/*    box-shadow: 0 0 2px 2px #38FFFC;*/
+    box-shadow: 0 2px 6px #00000026, 0 0 0 0.5px #a74100;
+}
+
+.space{
+    margin-right: 1rem !important;
+}
+
+.info{
+    text-align: center;
+    margin-top: 25px;
+}
+
+#resendcode{
+    margin-top: 25px;
+}
+
+.error{
+    position: relative;
+    top: -10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #212529;
+    border: 5px solid #000;
+    background-color: pink;
+    list-style-position: inside;
+    max-width: 343px;
+    width: 100%;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Verify button */
+.btn{
+    text-align: center;
+}
+
+.submit-btn{
+    position: relative;
+    padding: 9px 50px;
+    color: var(--background);
+    font: bolder 20px Poppins;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    border-radius: 1.5rem;
+    background-color: var(--accent);
+    cursor: pointer;
+    margin-top: 50px;    
+    margin-bottom: 50px;
+    transition-duration: 0.5s;
+}
+
+.submit-btn:hover{
+    background-color: rgb(255, 123, 38);
+}
+
+.submit-btn:active{
+    transform: scale(0.98);
+}

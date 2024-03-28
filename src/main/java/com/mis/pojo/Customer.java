@@ -9,6 +9,9 @@ package com.mis.pojo;
  * @author zheng
  */
 public class Customer extends User {
+
+    private String verifyToken;
+    private int verifyStatus;
     private String profileImgUrl;
     private int otp;
     private int accAvailable;
@@ -16,21 +19,34 @@ public class Customer extends User {
     public Customer() {
     }
 
-    public Customer(String profileImgUrl, int otp, int accAvailable) {
+    public Customer(String verifyToken, int verifyStatus, String profileImgUrl, int otp, int accAvailable) {
+        this.verifyToken = verifyToken;
+        this.verifyStatus = verifyStatus;
         this.profileImgUrl = profileImgUrl;
         this.otp = otp;
         this.accAvailable = accAvailable;
     }
 
     public Customer(Login login, String email, String verifyToken) {
-        super(login, email, verifyToken);
+        super(login, email);
+        this.verifyToken = verifyToken;
     }
 
-    public Customer(String profileImgUrl, int otp, int accAvailable, Login login, int userId, String userType, String email, Address address, String phone, String verifyToken, int verifyStatus, int life, int lastAttemptTime) {
-        super(login, userId, userType, email, address, phone, verifyToken, verifyStatus, life, lastAttemptTime);
+    public Customer(String verifyToken, int verifyStatus, String profileImgUrl, int otp, int accAvailable, Login login, int userId, String userType, String email, Address address, String phone, int life, int lastAttemptTime) {
+        super(login, userId, userType, email, address, phone, life, lastAttemptTime);
+        this.verifyToken = verifyToken;
+        this.verifyStatus = verifyStatus;
         this.profileImgUrl = profileImgUrl;
         this.otp = otp;
         this.accAvailable = accAvailable;
+    }
+
+    public String getVerifyToken() {
+        return verifyToken;
+    }
+
+    public int getVerifyStatus() {
+        return verifyStatus;
     }
 
     public String getProfileImgUrl() {
@@ -43,6 +59,14 @@ public class Customer extends User {
 
     public int getAccAvailable() {
         return accAvailable;
+    }
+
+    public void setVerifyToken(String verifyToken) {
+        this.verifyToken = verifyToken;
+    }
+
+    public void setVerifyStatus(int verifyStatus) {
+        this.verifyStatus = verifyStatus;
     }
 
     public void setProfileImgUrl(String profileImgUrl) {

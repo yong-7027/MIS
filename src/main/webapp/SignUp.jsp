@@ -109,6 +109,12 @@
             function ajaxFunction() {
                 var xmlhttp;
                 var formdata = new FormData(document.getElementById("signup-form"));
+                var formData = {
+                    "user-name": formdata.get("user-name"),
+                    "email": formdata.get("email"),
+                    "psd": formdata.get("psd"),
+                    "confirm-psd": formdata.get("confirm-psd")
+                };
 
                 if (window.XMLHttpRequest)
                     xmlhttp = new XMLHttpRequest();
@@ -146,7 +152,8 @@
                                         + "<h5>Verify your email address to Login with the below given link</h5>\n"
                                         + "<br/><br/>\n"
                                         + "<a href='http://localhost/MIS/email/verify?token=" + response.token + "'>Activate</a>",
-                                email: response.email
+                                email: response.email,
+                                url: response.url
                             };
 
                             xhttp.onreadystatechange = function () {
@@ -154,9 +161,9 @@
                                     console.log("Email sent successfully.");
                                 }
                             };
-                            
+
                             xhttp.open("POST", "<%= request.getContextPath()%>/email/send", true);
-                            xhttp.setRequestHeader("Content-Type", "application/json");    
+                            xhttp.setRequestHeader("Content-Type", "application/json");
                             xhttp.send(JSON.stringify(emailData));
 //                            window.location.href = response.url;
                         }
@@ -164,9 +171,8 @@
                 };
 
                 xmlhttp.open("POST", "<%= request.getContextPath()%>/customer/add", true);
-                console.log(JSON.stringify(formdata));
                 xmlhttp.setRequestHeader("Content-type", "application/json");
-                xmlhttp.send(formdata);
+                xmlhttp.send(formData);
             }
         </script>
 

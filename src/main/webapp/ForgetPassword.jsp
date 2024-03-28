@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="submit-btn">
-                    <a href="sign_in.php">BACK</a>
+                    <a href="SignIn.jsp">BACK</a>
                     <input type="button" name="submit" onclick="ajaxFunction();" value="SENT RESET EMAIL">
                 </div>
             </form>
@@ -62,10 +62,12 @@
             // Create a function that will receive data from the server
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4) {
-                    if (xmlhttp.responseText == "No email found. Please enter the valid email." || xmlhttp.responseText == "Please enter your email address." || xmlhttp.responseText == "The email address pattern is incorrect.") {
-                        $("#error_message_2").text(xmlhttp.responseText).show();
+                    var responses = JSON.parse(xmlhttp.responseText);
+
+                    if (responses.error) {
+                        $("#error_message2").text(response.error).show();
                     } else {
-                        window.location.href = "OTP.php"; // 跳转页面
+                        window.location.href = "OTP.jsp"; // 跳转页面
                     }
                 }
             };
